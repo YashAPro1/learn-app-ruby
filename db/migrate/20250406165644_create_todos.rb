@@ -2,8 +2,8 @@ class CreateTodos < ActiveRecord::Migration[8.0]
   def change
     create_table :todos do |t|
       t.string :title
-      t.boolean :completed
-      t.references :user, null: false, foreign_key: true
+      t.text :description
+      t.boolean :done
 
       t.timestamps
     end

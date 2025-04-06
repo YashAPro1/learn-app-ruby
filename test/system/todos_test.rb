@@ -14,9 +14,9 @@ class TodosTest < ApplicationSystemTestCase
     visit todos_url
     click_on "New todo"
 
-    check "Completed" if @todo.completed
+    fill_in "Description", with: @todo.description
+    check "Done" if @todo.done
     fill_in "Title", with: @todo.title
-    fill_in "User", with: @todo.user_id
     click_on "Create Todo"
 
     assert_text "Todo was successfully created"
@@ -27,9 +27,9 @@ class TodosTest < ApplicationSystemTestCase
     visit todo_url(@todo)
     click_on "Edit this todo", match: :first
 
-    check "Completed" if @todo.completed
+    fill_in "Description", with: @todo.description
+    check "Done" if @todo.done
     fill_in "Title", with: @todo.title
-    fill_in "User", with: @todo.user_id
     click_on "Update Todo"
 
     assert_text "Todo was successfully updated"

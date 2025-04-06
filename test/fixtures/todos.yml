@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  completed: false
-  user: one
+  description: MyText
+  done: false
 
 two:
   title: MyString
-  completed: false
-  user: two
+  description: MyText
+  done: false
